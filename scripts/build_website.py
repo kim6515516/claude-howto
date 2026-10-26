@@ -100,6 +100,7 @@ EXCLUDE_DIRS = {
     "vi",
     "zh",
     "ja",
+    "ko",
     "uk",
 }
 
@@ -1092,7 +1093,7 @@ def main() -> int:
         "--lang",
         type=str,
         default="en",
-        choices=["en", "vi", "zh", "ja", "uk"],
+        choices=["en", "vi", "zh", "ja", "ko", "uk"],
         help="Language code for the source tree (default: en — root markdown)",
     )
     parser.add_argument(
@@ -1120,6 +1121,7 @@ def main() -> int:
         "vi": repo_root / "vi",
         "zh": repo_root / "zh",
         "ja": repo_root / "ja",
+        "ko": repo_root / "ko",
         "uk": repo_root / "uk",
     }
     source_root = lang_root_map[args.lang].resolve()
